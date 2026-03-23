@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nomadd Haus | Yi-Yun Wang</title>
+  <meta
+    name="description"
+    content="Nomadd Haus — a shared spatial concept shaped by a slashed floor plan and a rotated central volume."
+  />
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Noto Sans TC", sans-serif;
+      background: linear-gradient(180deg, #f7f3ec 0%, #f4efe7 100%);
+      color: #1f1f1b;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(100% - 40px, 1180px);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.42);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      box-shadow: 0 8px 30px rgba(31, 31, 27, 0.04);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 16px 0;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 52px;
+      width: auto;
+      border-radius: 12px;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #6d685f;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #1f1f1b;
+    }
+
+    .hero {
+      padding: 34px 0 18px;
+    }
+
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 30px;
+      overflow: hidden;
+      background: #ddd4c8;
+      box-shadow: 0 16px 48px rgba(31, 31, 27, 0.08);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .project-head {
+      padding: 40px 0 10px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .tag {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8a8377;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 4.4vw, 58px);
+      line-height: 1.04;
+      margin: 0 0 16px;
+      letter-spacing: -0.03em;
+      max-width: 760px;
+    }
+
+    h2 {
+      font-size: clamp(22px, 2.8vw, 30px);
+      line-height: 1.12;
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: #5f5a52;
+      font-size: 14px;
+    }
+
+    .lead-en {
+      max-width: 760px;
+      font-size: 18px;
+      line-height: 1.65;
+      color: #4e4a43;
+      margin-bottom: 14px;
+    }
+
+    .lead-zh {
+      max-width: 760px;
+      font-size: 16px;
+      line-height: 1.9;
+      color: #5a554d;
+      margin-bottom: 18px;
+    }
+
+    .project-copy {
+      max-width: 760px;
+    }
+
+    .project-meta {
+      background: rgba(255,255,255,0.58);
+      border: 1px solid #d8d0c5;
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .meta-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd4c8;
+    }
+
+    .meta-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .meta-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #8a8377;
+      margin-bottom: 4px;
+    }
+
+    .meta-value {
+      font-size: 14px;
+      color: #1f1f1b;
+      line-height: 1.7;
+    }
+
+    .meta-value a {
+      color: #1f1f1b;
+      border-bottom: 1px solid rgba(31,31,27,0.18);
+    }
+
+    .story {
+      padding: 34px 0 18px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 0.88fr 1.12fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .story-note {
+      padding-top: 2px;
+    }
+
+    .story-copy {
+      max-width: 760px;
+    }
+
+    .gallery {
+      padding: 18px 0 84px;
+    }
+
+    .gallery-editorial {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .gallery-editorial-second {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .gallery-stack {
+      display: grid;
+      gap: 22px;
+    }
+
+    .gallery-item {
+      border-radius: 26px;
+      overflow: hidden;
+      background: #ddd4c8;
+      box-shadow: 0 14px 34px rgba(31, 31, 27, 0.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .gallery-item.hero-secondary {
+      aspect-ratio: 5 / 4;
+    }
+
+    .gallery-item.tall {
+      aspect-ratio: 4 / 5.1;
+    }
+
+    .gallery-item.wide {
+      aspect-ratio: 16 / 10;
+    }
+
+    .gallery-item.square-soft {
+      aspect-ratio: 1 / 1.08;
+    }
+
+    .external-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid #cfc6b8;
+      background: rgba(255,255,255,0.42);
+      font-size: 13px;
+      color: #1f1f1b;
+    }
+
+    footer {
+      padding: 24px 0 34px;
+    }
+
+    .footer-inner {
+      border-top: 1px solid #d8d0c5;
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: #6d685f;
+      font-size: 13px;
+    }
+
+    .floating-ig {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 15px;
+      border-radius: 999px;
+      background: rgba(31,31,27,0.92);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .floating-ig:hover {
+      transform: translateY(-2px);
+      opacity: 0.96;
+    }
+
+    .floating-ig-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .floating-ig-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      display: block;
+    }
+
+    .floating-ig-text {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 1024px) {
+      .container {
+        width: min(100% - 32px, 1180px);
+      }
+
+      .project-grid,
+      .story-grid,
+      .gallery-editorial,
+      .gallery-editorial-second {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px 0;
+      }
+
+      .logo img {
+        height: 44px;
+        border-radius: 10px;
+      }
+
+      nav {
+        width: 100%;
+        gap: 12px 16px;
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .hero {
+        padding: 22px 0 12px;
+      }
+
+      .hero-image {
+        border-radius: 22px;
+        aspect-ratio: 4 / 5;
+      }
+
+      h1 {
+        font-size: clamp(28px, 8vw, 42px);
+      }
+
+      .lead-en {
+        font-size: 16px;
+      }
+
+      .lead-zh {
+        font-size: 15px;
+      }
+
+      .project-head,
+      .story,
+      .gallery {
+        padding-bottom: 24px;
+      }
+
+      .gallery-item {
+        border-radius: 20px;
+      }
+
+      .gallery-item.hero-secondary,
+      .gallery-item.tall,
+      .gallery-item.wide,
+      .gallery-item.square-soft {
+        aspect-ratio: 4 / 5;
+      }
+
+      .floating-ig {
+        right: 14px;
+        bottom: 14px;
+        padding: 10px 13px;
+      }
+
+      .floating-ig-text {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .logo img {
+        height: 40px;
+        border-radius: 9px;
+      }
+
+      nav {
+        gap: 10px 14px;
+        font-size: 12px;
+      }
+
+      p,
+      .meta-value {
+        font-size: 13.5px;
+      }
+
+      .lead-en,
+      .lead-zh {
+        font-size: 14.5px;
+      }
+
+      .project-meta {
+        padding: 18px;
+        border-radius: 20px;
+      }
+
+      .floating-ig {
+        right: 12px;
+        bottom: 12px;
+      }
+
+      .floating-ig-icon svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .floating-ig-text {
+        font-size: 11.5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="index.html#home" class="logo">
+        <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/main/b%20logo-02.jpg" alt="Yi-Yun Wang logo">
+      </a>
+      <nav>
+        <a href="index.html#about">About Me</a>
+        <a href="index.html#interior">Interior Project</a>
+        <a href="index.html#recraft">Re:Craft</a>
+        <a href="index.html#contact">Form</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-image">
+          <img
+            src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/1128988f320c185e95c809ab406316bb952f5862/Nomadd%20haus%2001.jpg"
+            alt="Nomadd Haus hero image"
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="project-head">
+      <div class="container project-grid">
+        <div class="project-copy">
+          <div class="tag">Interior Project</div>
+          <h1>Nomadd Haus</h1>
+
+          <p class="lead-en">Nomadd Haus presents a spatial concept defined by a slashed floor plan. At the heart of the space, a rotated box structure acts as a bold central volume that draws attention from both the interior and exterior, creating a strong visual anchor that activates the overall layout.</p>
+
+          <p class="lead-zh">Nomadd Haus 以切斜的平面語彙建立空間概念。在場域中央，一座旋轉盒體成為鮮明的核心量體，不僅在室內形成視覺焦點，也從外部立面中清楚被感知，進一步帶動整體空間配置的節奏。</p>
+
+          <p>The project is conceived as more than a single-purpose interior. Through the interplay of geometry, openness, and visual direction, the space encourages gathering, staying, working, and informal exchange, allowing different modes of use to coexist within one shared environment.</p>
+
+          <p>這個案子並不只是單一功能的室內空間，而是透過幾何量體、開放感與視線導引的安排，讓停留、工作、交流與聚集等不同使用方式能夠同時發生，形成一個可被多元使用的共享場域。</p>
+
+          <a href="https://nomaddhaus.com" target="_blank" rel="noopener noreferrer" class="external-link">Visit Nomadd Haus</a>
+        </div>
+
+        <aside class="project-meta">
+          <div class="meta-item">
+            <div class="meta-label">Dimensions</div>
+            <div class="meta-value">90 sqm</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Photo credit</div>
+            <div class="meta-value">
+              <a href="https://www.instagram.com/sw8.photography/" target="_blank" rel="noopener noreferrer">@sw8.photography</a>
+            </div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Collaboration</div>
+            <div class="meta-value">
+              <a href="https://www.instagram.com/shanshanchuan.design/" target="_blank" rel="noopener noreferrer">@shanshanchuan.design</a>
+            </div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Website</div>
+            <div class="meta-value">
+              <a href="https://nomaddhaus.com" target="_blank" rel="noopener noreferrer">nomaddhaus.com</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="story">
+      <div class="container story-grid">
+        <div class="story-note">
+          <div class="tag">Spatial Narrative</div>
+          <h2>Geometry as gathering</h2>
+        </div>
+
+        <div class="story-copy">
+          <p>The slashed plan and rotated central volume are not only formal gestures, but tools for organizing movement, orientation, and shared attention. By shifting the geometry away from a conventional orthogonal layout, the project introduces a subtle tension that makes the space feel more dynamic and memorable.</p>
+          <p>切斜平面與旋轉核心量體不只是造型語言，而是組織動線、視線與共享關係的方式。當空間不再完全依循傳統正交格局時，整體場域也因此產生更鮮明的節奏與記憶點。</p>
+          <p>Rather than separating activities too strictly, Nomadd Haus allows different experiences to overlap. Moments of focus, conversation, pause, and circulation are woven into the same spatial field, reinforcing the openness of the project.</p>
+          <p>Nomadd Haus 並沒有將不同活動切割得過於明確，而是讓專注、交談、停留與移動等經驗在同一個場域中自然交織，進一步強化共享空間本身的開放性。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="container">
+        <div class="gallery-editorial">
+          <div class="gallery-stack">
+            <figure class="gallery-item hero-secondary">
+              <img
+                src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/1128988f320c185e95c809ab406316bb952f5862/Nomadd%20haus%2002.jpg"
+                alt="Nomadd Haus interior view 02"
+              >
+            </figure>
+
+            <figure class="gallery-item wide">
+              <img
+                src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/1128988f320c185e95c809ab406316bb952f5862/Nomadd%20haus%2005.jpeg"
+                alt="Nomadd Haus interior view 05"
+              >
+            </figure>
+          </div>
+
+          <div class="gallery-stack">
+            <figure class="gallery-item tall">
+              <img
+                src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/1128988f320c185e95c809ab406316bb952f5862/Nomadd%20haus%2004.jpg"
+                alt="Nomadd Haus interior view 04"
+              >
+            </figure>
+
+            <figure class="gallery-item square-soft">
+              <img
+                src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/1128988f320c185e95c809ab406316bb952f5862/Nomadd%20haus%2010.jpg"
+                alt="Nomadd Haus interior view 10"
+              >
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story">
+      <div class="container story-grid">
+        <div class="story-note">
+          <div class="tag">Shared Atmosphere</div>
+          <h2>Openness, pause, and use</h2>
+        </div>
+
+        <div class="story-copy">
+          <p>What defines the project is not only its formal centerpiece, but the atmosphere built around everyday use. Furniture placement, visual permeability, and pockets of openness support both individual occupation and collective interaction, allowing the space to adapt across different rhythms of the day.</p>
+          <p>這個案子的特色不只在於中心量體本身，更在於圍繞日常使用所建立出的場域氛圍。家具安排、視線穿透與開放留白讓個人停留與群體互動得以共存，也讓空間能對應一天之中不同的使用節奏。</p>
+          <p>The project balances a bold spatial move with a welcoming emotional tone. Even with a strong geometric gesture at its core, the overall environment remains approachable, social, and comfortable — qualities that are essential to a shared creative setting.</p>
+          <p>即使以鮮明的幾何手法作為核心，整體空間依然維持親近、交流與舒適的感受。也正因如此，Nomadd Haus 得以在強烈識別性與共享創意場域的日常性之間取得平衡。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="container">
+        <div class="gallery-editorial gallery-editorial-second">
+          <div class="gallery-stack">
+            <figure class="gallery-item wide">
+              <img
+                src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/1128988f320c185e95c809ab406316bb952f5862/Nomadd%20haus%2012.jpg"
+                alt="Nomadd Haus interior view 12"
+              >
+            </figure>
+
+            <figure class="gallery-item square-soft">
+              <img
+                src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/1128988f320c185e95c809ab406316bb952f5862/Nomadd%20haus%2016.jpeg"
+                alt="Nomadd Haus interior view 16"
+              >
+            </figure>
+          </div>
+
+          <div class="gallery-stack">
+            <figure class="gallery-item tall">
+              <img
+                src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/1128988f320c185e95c809ab406316bb952f5862/Nomadd%20haus%2010.jpg"
+                alt="Nomadd Haus interior atmosphere"
+              >
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Yi-Yun Wang</div>
+      <div>Nomadd Haus</div>
+    </div>
+  </footer>
+
+  <a
+    href="https://www.instagram.com/dorawang.ds/"
+    class="floating-ig"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Open Instagram"
+  >
+    <span class="floating-ig-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+      </svg>
+    </span>
+    <span class="floating-ig-text">Instagram</span>
+  </a>
+
+</body>
+</html>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yiyun Wang | Interior & Furniture Design</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Noto Sans TC", sans-serif;
+      background: #f5f1ea;
+      color: #1f1f1b;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(245, 241, 234, 0.95);
+      border-bottom: 1px solid #d8d0c5;
+      z-index: 100;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: #6d685f;
+    }
+
+    .hero {
+      padding: 80px 0 60px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .tag {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8a8377;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 56px;
+      line-height: 1.05;
+      margin: 0 0 20px;
+    }
+
+    h2 {
+      font-size: 36px;
+      margin: 0 0 16px;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 20px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: #5f5a52;
+    }
+
+    .hero-image {
+      background: #d7cec2;
+      border-radius: 24px;
+      min-height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(31,31,27,0.45);
+      font-size: 14px;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 14px 22px;
+      border-radius: 999px;
+      border: 1px solid #cfc6b8;
+      font-size: 15px;
+    }
+
+    .btn-dark {
+      background: #1f1f1b;
+      color: #fff;
+      border-color: #1f1f1b;
+    }
+
+    .btn-light {
+      background: transparent;
+      color: #1f1f1b;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .alt {
+      background: rgba(255,255,255,0.35);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 28px;
+    }
+
+    .about-box {
+      background: rgba(255,255,255,0.55);
+      border: 1px solid #d8d0c5;
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .about-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 16px 0 0;
+    }
+
+    .about-box li {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd4c8;
+      color: #5f5a52;
+    }
+
+    .about-box li:last-child {
+      border-bottom: none;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 24px;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 24px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.65);
+      border: 1px solid #d8d0c5;
+      border-radius: 22px;
+      overflow: hidden;
+    }
+
+    .card-image {
+      min-height: 280px;
+      background: #d8d0c5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(31,31,27,0.45);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: #7a7469;
+      margin-bottom: 10px;
+    }
+
+    .contact-box {
+      text-align: center;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid #d8d0c5;
+      border-radius: 26px;
+      padding: 48px 24px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    footer {
+      padding: 28px 0 40px;
+    }
+
+    .footer-inner {
+      border-top: 1px solid #d8d0c5;
+      padding-top: 18px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: #6d685f;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-grid,
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 40px;
+      }
+
+      h2 {
+        font-size: 30px;
+      }
+
+      .hero-image {
+        min-height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <div class="logo">Yi-Yun Wang</div>
+      <nav>
+        <a href="#about">About Me</a>
+        <a href="#interior">Interior Project</a>
+        <a href="#recraft">Re:Craft</a>
+        <a href="#contact">Form</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="tag">Interior Design / Furniture Design</div>
+        <h1>Designing spaces and objects through material, atmosphere, and everyday use.</h1>
+        <p>
+          我專注於室內設計、家具設計與材料敘事，透過空間與物件回應使用者的日常經驗，
+          讓設計在尺度、質地與氛圍之間建立更細緻的關係。
+        </p>
+        <div class="buttons">
+          <a href="#interior" class="btn btn-dark">View Projects</a>
+          <a href="https://forms.gle/Gvcu7QXtL9oEdANt6" target="_blank" class="btn btn-light">Project Inquiry</a>
+        </div>
+      </div>
+      <div class="hero-image">Main Visual</div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about-grid">
+      <div>
+        <div class="tag">About Me</div>
+        <h2>從空間到物件，持續探索材料、使用與生活方式之間的連結。</h2>
+        <p>
+          我是 Yi-Yun Wang，專注於室內設計、家具設計與空間敘事。
+          我的設計實踐關注材料本身的質感、使用者行為，以及空間如何在日常中被感受與記憶。
+        </p>
+        <p>
+          在不同尺度之間，我希望讓設計不只停留在形式，而是真正回到人的生活節奏，
+          回應居住、停留、交流與使用的細節。
+        </p>
+      </div>
+
+      <div class="about-box">
+        <div class="tag">Practice</div>
+        <h3>Design Focus</h3>
+        <ul>
+          <li>Interior Design</li>
+          <li>Furniture / Object Design</li>
+          <li>Material Narrative</li>
+          <li>Spatial Styling</li>
+          <li>Creative Direction</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="interior">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="tag">Interior Project</div>
+          <h2>Selected interior works</h2>
+        </div>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-image">Project 01</div>
+          <div class="card-content">
+            <h3>Residential Interior</h3>
+            <div class="meta">Taipei / Residential / 2025</div>
+            <p>以材質層次、光線與居住動線為主，建立安靜而細膩的生活空間。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">Project 02</div>
+          <div class="card-content">
+            <h3>Commercial Space</h3>
+            <div class="meta">Retail / Branding / 2024</div>
+            <p>透過空間識別與使用路徑整合品牌氛圍，讓場域具有更清楚的敘事感。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">Project 03</div>
+          <div class="card-content">
+            <h3>Exhibition Styling</h3>
+            <div class="meta">Installation / Spatial Experience / 2024</div>
+            <p>結合展示節奏、材質與觀看視角，讓參與者與空間形成更直接的互動。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="recraft">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <div class="tag">Re:Craft Furniture</div>
+          <h2>Furniture objects and material stories</h2>
+        </div>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-image">Furniture 01</div>
+          <div class="card-content">
+            <h3>Reclaimed Wood Chair</h3>
+            <div class="meta">Wood / Reuse / Prototype</div>
+            <p>以回收木料與結構比例為核心，重新思考物件與材料的延續性。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">Furniture 02</div>
+          <div class="card-content">
+            <h3>Side Table Series</h3>
+            <div class="meta">Material Study / Object / 2025</div>
+            <p>透過表面紋理與尺寸測試，探索日常家具在不同空間中的存在方式。</p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">Furniture 03</div>
+          <div class="card-content">
+            <h3>Storage Piece</h3>
+            <div class="meta">Craft / Functional Object / Edition</div>
+            <p>在收納與展示之間取得平衡，讓家具同時具備功能性與觀看性。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact-box">
+        <div class="tag">Form</div>
+        <h2>有合作、委託或空間設計需求，歡迎填寫表單。</h2>
+        <p>
+          你可以透過表單提供專案類型、預計時程、空間規模或合作方向，我會再依內容與你聯繫。
+        </p>
+        <div class="buttons" style="justify-content:center;">
+          <a href="https://forms.gle/Gvcu7QXtL9oEdANt6" target="_blank" class="btn btn-dark">Fill Out the Form</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Yiyun Wang</div>
+      <div>Interior Design / Furniture Design</div>
+    </div>
+  </footer>
+
+</body>
+</html>

@@ -1,24 +1,23 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yiyun Wang | Interior & Furniture Design</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yi-Yun Wang | Interior & Furniture Design</title>
+  <meta
+    name="description"
+    content="Yi-Yun Wang portfolio — interior design, furniture design, and material-driven spatial storytelling."
+  />
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: Arial, "Noto Sans TC", sans-serif;
-      background: #f5f1ea;
+      background: linear-gradient(180deg, #f7f3ec 0%, #f4efe7 100%);
       color: #1f1f1b;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     a {
@@ -26,54 +25,73 @@
       color: inherit;
     }
 
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
     .container {
-      width: 90%;
-      max-width: 1100px;
+      width: min(100% - 40px, 1180px);
       margin: 0 auto;
     }
 
     header {
       position: sticky;
       top: 0;
-      background: rgba(245, 241, 234, 0.95);
-      border-bottom: 1px solid #d8d0c5;
       z-index: 100;
+      background: rgba(255, 255, 255, 0.42);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      box-shadow: 0 8px 30px rgba(31, 31, 27, 0.04);
     }
 
     .nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 0;
       gap: 20px;
       flex-wrap: wrap;
+      padding: 16px 0;
     }
 
     .logo {
-      font-weight: bold;
-      letter-spacing: 1px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 52px;
+      width: auto;
+      display: block;
+      border-radius: 12px;
     }
 
     nav {
       display: flex;
-      gap: 20px;
+      gap: 18px;
       flex-wrap: wrap;
       color: #6d685f;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #1f1f1b;
     }
 
     .hero {
-      padding: 80px 0 60px;
+      padding: 60px 0 54px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 44px;
       align-items: center;
     }
 
     .tag {
-      font-size: 12px;
+      font-size: 11px;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #8a8377;
@@ -81,50 +99,78 @@
     }
 
     h1 {
-      font-size: 56px;
+      font-size: clamp(34px, 4.4vw, 58px);
       line-height: 1.05;
-      margin: 0 0 20px;
+      margin: 0 0 14px;
+      letter-spacing: -0.03em;
+      max-width: 640px;
     }
 
     h2 {
-      font-size: 36px;
-      margin: 0 0 16px;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.12;
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
     }
 
     h3 {
-      margin: 0 0 8px;
-      font-size: 20px;
+      margin: 0 0 6px;
+      font-size: 18px;
+      line-height: 1.15;
     }
 
     p {
-      margin: 0 0 14px;
+      margin: 0 0 10px;
       color: #5f5a52;
+      font-size: 14px;
     }
 
-    .hero-image {
-      background: #d7cec2;
-      border-radius: 24px;
-      min-height: 520px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(31,31,27,0.45);
+    .en-sub {
+      display: block;
+      margin-bottom: 10px;
+      color: #7a7469;
       font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .zh-sub {
+      display: block;
+      color: #5f5a52;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .hero-text,
+    .about-copy,
+    .about-box,
+    .contact-box {
+      text-align: left;
+    }
+
+    .hero-text p,
+    .hero-text .en-sub,
+    .hero-text .zh-sub {
+      max-width: 520px;
     }
 
     .buttons {
       display: flex;
-      gap: 14px;
+      gap: 12px;
       flex-wrap: wrap;
       margin-top: 24px;
     }
 
     .btn {
       display: inline-block;
-      padding: 14px 22px;
+      padding: 12px 20px;
       border-radius: 999px;
       border: 1px solid #cfc6b8;
-      font-size: 15px;
+      font-size: 14px;
+      transition: 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
     }
 
     .btn-dark {
@@ -134,41 +180,129 @@
     }
 
     .btn-light {
-      background: transparent;
+      background: rgba(255,255,255,0.34);
       color: #1f1f1b;
     }
 
+    .hero-slider {
+      position: relative;
+      width: 100%;
+      height: 700px;
+      border-radius: 30px;
+      overflow: hidden;
+      background: #d7cec2;
+      box-shadow: 0 16px 48px rgba(31, 31, 27, 0.08);
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    .slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .slider-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.16), rgba(0,0,0,0.02));
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .slider-controls {
+      position: absolute;
+      inset: 0;
+      z-index: 3;
+      pointer-events: none;
+    }
+
+    .arrow {
+      pointer-events: auto;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border: none;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.86);
+      color: #1f1f1b;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .arrow.prev { left: 14px; }
+    .arrow.next { right: 14px; }
+
+    .dots {
+      pointer-events: auto;
+      position: absolute;
+      left: 50%;
+      bottom: 18px;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      border: none;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      padding: 0;
+    }
+
+    .dot.active {
+      background: #ffffff;
+    }
+
     section {
-      padding: 80px 0;
+      padding: 82px 0;
     }
 
     .alt {
-      background: rgba(255,255,255,0.35);
+      background: rgba(255,255,255,0.28);
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.08fr 0.92fr;
       gap: 28px;
+      align-items: start;
     }
 
     .about-box {
       background: rgba(255,255,255,0.55);
       border: 1px solid #d8d0c5;
       border-radius: 24px;
-      padding: 28px;
+      padding: 24px;
     }
 
     .about-box ul {
       list-style: none;
       padding: 0;
-      margin: 16px 0 0;
+      margin: 14px 0 0;
     }
 
     .about-box li {
-      padding: 10px 0;
+      padding: 9px 0;
       border-bottom: 1px solid #ddd4c8;
       color: #5f5a52;
+      font-size: 14px;
     }
 
     .about-box li:last-child {
@@ -179,89 +313,403 @@
       display: flex;
       justify-content: space-between;
       align-items: end;
-      margin-bottom: 24px;
       gap: 20px;
       flex-wrap: wrap;
+      margin-bottom: 28px;
     }
 
-    .card-grid {
+    .section-title-wrap {
+      max-width: 760px;
+    }
+
+    .editorial-list {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 24px;
+      gap: 42px;
+      margin-top: 12px;
     }
 
-    .card {
-      background: rgba(255,255,255,0.65);
-      border: 1px solid #d8d0c5;
-      border-radius: 22px;
-      overflow: hidden;
+    .editorial-feature,
+    .editorial-item {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: center;
     }
 
-    .card-image {
-      min-height: 280px;
-      background: #d8d0c5;
+    .editorial-item.reverse .editorial-text {
+      order: 2;
+    }
+
+    .editorial-item.reverse .editorial-media {
+      order: 1;
+    }
+
+    .editorial-item .editorial-text,
+    .editorial-item .editorial-media,
+    .editorial-feature .editorial-text,
+    .editorial-feature .editorial-media {
+      align-self: center;
+    }
+
+    .editorial-media {
+      width: 100%;
       display: flex;
       align-items: center;
-      justify-content: center;
-      color: rgba(31,31,27,0.45);
-      font-size: 13px;
+      justify-content: flex-start;
+    }
+
+    .editorial-item.reverse .editorial-media {
+      justify-content: flex-end;
+    }
+
+    .editorial-image {
+      display: block;
+      width: 100%;
+      max-width: 560px;
+      aspect-ratio: 5 / 4.1;
+      overflow: hidden;
+      border-radius: 24px;
+      background: #ddd4c8;
+    }
+
+    .editorial-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.4s ease;
+    }
+
+    .editorial-image:hover img {
+      transform: scale(1.02);
+    }
+
+    .editorial-text {
+      width: 100%;
+      max-width: 560px;
+      text-align: left;
+      padding-top: 0;
+    }
+
+    .editorial-kicker {
+      margin: 0 0 8px;
+      font-size: 11px;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      color: #8a8377;
     }
 
-    .card-content {
-      padding: 20px;
+    .editorial-title {
+      margin: 0 0 10px;
+      font-size: clamp(24px, 3vw, 36px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
     }
 
-    .meta {
+    .editorial-en {
+      margin: 0 0 8px;
       font-size: 14px;
       color: #7a7469;
-      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .editorial-zh {
+      margin: 0 0 14px;
+      font-size: 14px;
+      color: #5f5a52;
+      line-height: 1.75;
+    }
+
+    .editorial-link {
+      display: inline-block;
+      padding: 10px 16px;
+      border: 1px solid #cfc6b8;
+      border-radius: 999px;
+      font-size: 13px;
+      color: #1f1f1b;
+      background: rgba(255,255,255,0.38);
     }
 
     .contact-box {
-      text-align: center;
-      background: rgba(255,255,255,0.55);
+      background: rgba(255,255,255,0.58);
       border: 1px solid #d8d0c5;
       border-radius: 26px;
-      padding: 48px 24px;
+      padding: 42px 22px;
       max-width: 760px;
       margin: 0 auto;
     }
 
     footer {
-      padding: 28px 0 40px;
+      padding: 24px 0 34px;
     }
 
     .footer-inner {
       border-top: 1px solid #d8d0c5;
-      padding-top: 18px;
+      padding-top: 16px;
       display: flex;
       justify-content: space-between;
       gap: 16px;
       flex-wrap: wrap;
       color: #6d685f;
-      font-size: 14px;
+      font-size: 13px;
     }
 
-    @media (max-width: 900px) {
+    .floating-ig {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 15px;
+      border-radius: 999px;
+      background: rgba(31,31,27,0.92);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .floating-ig:hover {
+      transform: translateY(-2px);
+      opacity: 0.96;
+    }
+
+    .floating-ig-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .floating-ig-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      display: block;
+    }
+
+    .floating-ig-text {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 1024px) {
+      .container {
+        width: min(100% - 32px, 1180px);
+      }
+
       .hero-grid,
       .about-grid,
-      .card-grid {
+      .editorial-feature,
+      .editorial-item {
         grid-template-columns: 1fr;
       }
 
+      .editorial-item.reverse .editorial-text,
+      .editorial-item.reverse .editorial-media {
+        order: unset;
+      }
+
+      .hero-slider {
+        height: 620px;
+      }
+
+      .editorial-media,
+      .editorial-item.reverse .editorial-media {
+        justify-content: flex-start;
+      }
+
+      .editorial-image,
+      .editorial-text {
+        max-width: 100%;
+      }
+
+      .hero-text p,
+      .hero-text .en-sub,
+      .hero-text .zh-sub {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px 0;
+      }
+
+      .logo img {
+        height: 44px;
+        border-radius: 10px;
+      }
+
+      nav {
+        width: 100%;
+        gap: 12px 16px;
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .hero {
+        padding: 36px 0 40px;
+      }
+
+      .tag {
+        font-size: 10px;
+        letter-spacing: 1.6px;
+      }
+
       h1 {
-        font-size: 40px;
+        font-size: clamp(28px, 8vw, 42px);
       }
 
       h2 {
-        font-size: 30px;
+        font-size: clamp(22px, 5.5vw, 30px);
       }
 
-      .hero-image {
-        min-height: 320px;
+      .hero-slider {
+        height: 540px;
+        border-radius: 22px;
+      }
+
+      .arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 14px;
+      }
+
+      section {
+        padding: 60px 0;
+      }
+
+      .about-box,
+      .contact-box {
+        padding: 20px;
+        border-radius: 20px;
+      }
+
+      .editorial-list {
+        gap: 28px;
+      }
+
+      .editorial-feature,
+      .editorial-item {
+        gap: 20px;
+      }
+
+      .editorial-image {
+        border-radius: 20px;
+      }
+
+      .editorial-title {
+        font-size: 26px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 12px;
+        gap: 8px;
+      }
+
+      .floating-ig {
+        right: 14px;
+        bottom: 14px;
+        padding: 10px 13px;
+      }
+
+      .floating-ig-text {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .nav {
+        padding: 12px 0;
+      }
+
+      .logo img {
+        height: 40px;
+        border-radius: 9px;
+      }
+
+      nav {
+        gap: 10px 14px;
+        font-size: 12px;
+      }
+
+      .hero {
+        padding: 28px 0 34px;
+      }
+
+      h1 {
+        font-size: clamp(26px, 9vw, 34px);
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+
+      p,
+      .en-sub,
+      .zh-sub,
+      .editorial-en,
+      .editorial-zh {
+        font-size: 13.5px;
+      }
+
+      .buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .hero-slider {
+        height: 460px;
+        border-radius: 18px;
+      }
+
+      .arrow.prev { left: 10px; }
+      .arrow.next { right: 10px; }
+
+      .dots {
+        bottom: 14px;
+      }
+
+      .about-box,
+      .contact-box {
+        padding: 18px;
+      }
+
+      .editorial-title {
+        font-size: 24px;
+      }
+
+      .floating-ig {
+        right: 12px;
+        bottom: 12px;
+      }
+
+      .floating-ig-icon svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .floating-ig-text {
+        font-size: 11.5px;
       }
     }
   </style>
@@ -270,7 +718,9 @@
 
   <header>
     <div class="container nav">
-      <div class="logo">Yi-Yun Wang</div>
+      <a href="#home" class="logo">
+        <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/main/b%20logo-02.jpg" alt="Yi-Yun Wang logo">
+      </a>
       <nav>
         <a href="#about">About Me</a>
         <a href="#interior">Interior Project</a>
@@ -282,40 +732,57 @@
 
   <section class="hero" id="home">
     <div class="container hero-grid">
-      <div>
+      <div class="hero-text">
         <div class="tag">Interior Design / Furniture Design</div>
         <h1>Designing spaces and objects through material, atmosphere, and everyday use.</h1>
-        <p>
-          我專注於室內設計、家具設計與材料敘事，透過空間與物件回應使用者的日常經驗，
-          讓設計在尺度、質地與氛圍之間建立更細緻的關係。
-        </p>
+        <span class="en-sub">A portfolio focused on spatial narrative, material sensibility, and the relationship between objects and everyday living.</span>
+        <span class="zh-sub">我專注於室內設計、家具設計與材料敘事，透過空間與物件回應使用者的日常經驗，讓設計在尺度、質地與氛圍之間建立更細緻的關係。</span>
         <div class="buttons">
           <a href="#interior" class="btn btn-dark">View Projects</a>
-          <a href="https://forms.gle/Gvcu7QXtL9oEdANt6" target="_blank" class="btn btn-light">Project Inquiry</a>
+          <a href="https://forms.gle/Gvcu7QXtL9oEdANt6" target="_blank" rel="noopener noreferrer" class="btn btn-light">Project Inquiry</a>
         </div>
       </div>
-      <div class="hero-image">Main Visual</div>
+
+      <div class="hero-slider" id="heroSlider" aria-label="Featured works slider">
+        <div class="slide active">
+          <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/c2177d3daae8319540413312f15d5a5440f4c5c9/Refined%20Harmony%2001.JPG" alt="Refined Harmony project">
+        </div>
+        <div class="slide">
+          <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/8b74421c75ce6cf6fafa893757e4b28dbca20fcf/Nomadd%20haus%2001.jpg" alt="Nomadd Haus project">
+        </div>
+        <div class="slide">
+          <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/8b74421c75ce6cf6fafa893757e4b28dbca20fcf/Cloister%20Studio%2001.jpg" alt="Cloister Studio project">
+        </div>
+
+        <div class="slider-overlay"></div>
+
+        <div class="slider-controls">
+          <button class="arrow prev" aria-label="Previous slide">&#10094;</button>
+          <button class="arrow next" aria-label="Next slide">&#10095;</button>
+          <div class="dots">
+            <button class="dot active" aria-label="Go to slide 1"></button>
+            <button class="dot" aria-label="Go to slide 2"></button>
+            <button class="dot" aria-label="Go to slide 3"></button>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="about">
     <div class="container about-grid">
-      <div>
+      <div class="about-copy">
         <div class="tag">About Me</div>
-        <h2>從空間到物件，持續探索材料、使用與生活方式之間的連結。</h2>
-        <p>
-          我是 Yi-Yun Wang，專注於室內設計、家具設計與空間敘事。
-          我的設計實踐關注材料本身的質感、使用者行為，以及空間如何在日常中被感受與記憶。
-        </p>
-        <p>
-          在不同尺度之間，我希望讓設計不只停留在形式，而是真正回到人的生活節奏，
-          回應居住、停留、交流與使用的細節。
-        </p>
+        <h2>Creating spaces and objects through material, use, and atmosphere.</h2>
+        <span class="en-sub">I am an interior and furniture designer interested in how materials, behaviors, and spatial experience shape everyday life.</span>
+        <span class="zh-sub">我是 Yi-Yun Wang，專注於室內設計、家具設計與空間敘事。我的設計實踐關注材料本身的質感、使用者行為，以及空間如何在日常中被感受與記憶。</span>
+        <span class="zh-sub">在不同尺度之間，我希望讓設計不只停留在形式，而是真正回到人的生活節奏，回應居住、停留、交流與使用的細節。</span>
       </div>
 
       <div class="about-box">
         <div class="tag">Practice</div>
         <h3>Design Focus</h3>
+        <span class="en-sub">Selected areas of practice and creative direction.</span>
         <ul>
           <li>Interior Design</li>
           <li>Furniture / Object Design</li>
@@ -330,39 +797,58 @@
   <section class="alt" id="interior">
     <div class="container">
       <div class="section-head">
-        <div>
+        <div class="section-title-wrap">
           <div class="tag">Interior Project</div>
           <h2>Selected interior works</h2>
+          <span class="en-sub">A curated selection of spaces shaped through atmosphere, material sensibility, and everyday spatial rhythm.</span>
         </div>
       </div>
 
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-image">Project 01</div>
-          <div class="card-content">
-            <h3>Residential Interior</h3>
-            <div class="meta">Taipei / Residential / 2025</div>
-            <p>以材質層次、光線與居住動線為主，建立安靜而細膩的生活空間。</p>
+      <div class="editorial-list">
+        <article class="editorial-feature">
+          <div class="editorial-media">
+            <a href="project-refined-harmony.html" class="editorial-image">
+              <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/c2177d3daae8319540413312f15d5a5440f4c5c9/Refined%20Harmony%2001.JPG" alt="Refined Harmony">
+            </a>
           </div>
-        </div>
+          <div class="editorial-text">
+            <p class="editorial-kicker">Featured Interior</p>
+            <h3 class="editorial-title">Refined Harmony</h3>
+            <p class="editorial-en">A harmonious dialogue between cultures, pairing a soft oat-toned aesthetic with a subtle European influence.</p>
+            <p class="editorial-zh">一場跨文化的和諧對話，以柔和燕麥色調結合淡淡的歐式語彙，建立安靜而平衡的空間氛圍。</p>
+            <a href="project-refined-harmony.html" class="editorial-link">View Case</a>
+          </div>
+        </article>
 
-        <div class="card">
-          <div class="card-image">Project 02</div>
-          <div class="card-content">
-            <h3>Commercial Space</h3>
-            <div class="meta">Retail / Branding / 2024</div>
-            <p>透過空間識別與使用路徑整合品牌氛圍，讓場域具有更清楚的敘事感。</p>
+        <article class="editorial-item">
+          <div class="editorial-text">
+            <p class="editorial-kicker">Interior Project</p>
+            <h3 class="editorial-title">Nomadd Haus</h3>
+            <p class="editorial-en">A shared environment shaped through atmosphere, gathering, and everyday interaction.</p>
+            <p class="editorial-zh">透過場域氛圍與使用情境整合共享、停留與交流的空間感受。</p>
+            <a href="project-nomadd-haus.html" class="editorial-link">View Case</a>
           </div>
-        </div>
+          <div class="editorial-media">
+            <a href="project-nomadd-haus.html" class="editorial-image">
+              <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/8b74421c75ce6cf6fafa893757e4b28dbca20fcf/Nomadd%20haus%2001.jpg" alt="Nomadd Haus">
+            </a>
+          </div>
+        </article>
 
-        <div class="card">
-          <div class="card-image">Project 03</div>
-          <div class="card-content">
-            <h3>Exhibition Styling</h3>
-            <div class="meta">Installation / Spatial Experience / 2024</div>
-            <p>結合展示節奏、材質與觀看視角，讓參與者與空間形成更直接的互動。</p>
+        <article class="editorial-item reverse">
+          <div class="editorial-text">
+            <p class="editorial-kicker">Interior Project</p>
+            <h3 class="editorial-title">Cloister Studio</h3>
+            <p class="editorial-en">A focused studio space articulated through quiet detail, concentration, and visual identity.</p>
+            <p class="editorial-zh">在空間節奏與材質細節之間，形塑更專注且具有識別性的工作場域。</p>
+            <a href="project-cloister-studio.html" class="editorial-link">View Case</a>
           </div>
-        </div>
+          <div class="editorial-media">
+            <a href="project-cloister-studio.html" class="editorial-image">
+              <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/8b74421c75ce6cf6fafa893757e4b28dbca20fcf/Cloister%20Studio%2001.jpg" alt="Cloister Studio">
+            </a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -370,39 +856,44 @@
   <section id="recraft">
     <div class="container">
       <div class="section-head">
-        <div>
+        <div class="section-title-wrap">
           <div class="tag">Re:Craft Furniture</div>
-          <h2>Furniture objects and material stories</h2>
+          <h2>Furniture from interior leftovers</h2>
+          <span class="en-sub">Re:Craft transforms high-quality leftover materials from interior renovation into furniture pieces, extending the life of finishes through everyday use.</span>
+          <span class="zh-sub">Re:Craft 以室內裝修中品質良好的剩餘材料為起點，透過家具設計重新轉化與再利用，讓材料在日常使用中延續價值。</span>
         </div>
       </div>
 
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-image">Furniture 01</div>
-          <div class="card-content">
-            <h3>Reclaimed Wood Chair</h3>
-            <div class="meta">Wood / Reuse / Prototype</div>
-            <p>以回收木料與結構比例為核心，重新思考物件與材料的延續性。</p>
+      <div class="editorial-list">
+        <article class="editorial-item">
+          <div class="editorial-text">
+            <p class="editorial-kicker">Re:Craft / Side Table</p>
+            <h3 class="editorial-title">Green Top Side Table</h3>
+            <p class="editorial-en">A side table made with leftover Osaka tiles from a TV wall finish, turning interior surface material into a new everyday object.</p>
+            <p class="editorial-zh">以電視牆鋪貼大阪磁磚後留下的材料作為桌板，將原本屬於室內表面的剩料轉化為可持續使用的家具。</p>
+            <a href="project-green-top-side-table.html" class="editorial-link">View Case</a>
           </div>
-        </div>
+          <div class="editorial-media">
+            <a href="project-green-top-side-table.html" class="editorial-image">
+              <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/bd233c2013b904b67ef95aafbe123f25f63b4e7b/Green%20top%20Side%20table%2001.jpg" alt="Green Top Side Table">
+            </a>
+          </div>
+        </article>
 
-        <div class="card">
-          <div class="card-image">Furniture 02</div>
-          <div class="card-content">
-            <h3>Side Table Series</h3>
-            <div class="meta">Material Study / Object / 2025</div>
-            <p>透過表面紋理與尺寸測試，探索日常家具在不同空間中的存在方式。</p>
+        <article class="editorial-item reverse">
+          <div class="editorial-text">
+            <p class="editorial-kicker">Re:Craft / Tea Table</p>
+            <h3 class="editorial-title">Wooden Night Stand</h3>
+            <p class="editorial-en">Built from the remaining solid wood left after producing a dining tabletop, this piece reuses the offcut through a solid wood joinery approach.</p>
+            <p class="editorial-zh">以製作餐桌桌板後剩下的實木材料重新製作，並透過實木榫接方式形成一件延續木質價值的茶几作品。</p>
+            <a href="project-wooden-night-stand.html" class="editorial-link">View Case</a>
           </div>
-        </div>
-
-        <div class="card">
-          <div class="card-image">Furniture 03</div>
-          <div class="card-content">
-            <h3>Storage Piece</h3>
-            <div class="meta">Craft / Functional Object / Edition</div>
-            <p>在收納與展示之間取得平衡，讓家具同時具備功能性與觀看性。</p>
+          <div class="editorial-media">
+            <a href="project-wooden-night-stand.html" class="editorial-image">
+              <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/bd233c2013b904b67ef95aafbe123f25f63b4e7b/Wooden%20Night%20stand%2001.jpg" alt="Wooden Night Stand">
+            </a>
           </div>
-        </div>
+        </article>
       </div>
     </div>
   </section>
@@ -411,12 +902,11 @@
     <div class="container">
       <div class="contact-box">
         <div class="tag">Form</div>
-        <h2>有合作、委託或空間設計需求，歡迎填寫表單。</h2>
-        <p>
-          你可以透過表單提供專案類型、預計時程、空間規模或合作方向，我會再依內容與你聯繫。
-        </p>
-        <div class="buttons" style="justify-content:center;">
-          <a href="https://forms.gle/Gvcu7QXtL9oEdANt6" target="_blank" class="btn btn-dark">Fill Out the Form</a>
+        <h2>Project inquiry and collaboration</h2>
+        <span class="en-sub">For commissions, collaborations, interior projects, or furniture inquiries, please fill out the form.</span>
+        <span class="zh-sub">有合作、委託或空間設計需求，歡迎填寫表單。你可以透過表單提供專案類型、預計時程、空間規模或合作方向，我會再依內容與你聯繫。</span>
+        <div class="buttons">
+          <a href="https://forms.gle/Gvcu7QXtL9oEdANt6" target="_blank" rel="noopener noreferrer" class="btn btn-dark">Fill Out the Form</a>
         </div>
       </div>
     </div>
@@ -424,10 +914,86 @@
 
   <footer>
     <div class="container footer-inner">
-      <div>© 2026 Yiyun Wang</div>
+      <div>© 2026 Yi-Yun Wang</div>
       <div>Interior Design / Furniture Design</div>
     </div>
   </footer>
+
+  <a
+    href="https://www.instagram.com/dorawang.ds/"
+    class="floating-ig"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Open Instagram"
+  >
+    <span class="floating-ig-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+      </svg>
+    </span>
+    <span class="floating-ig-text">Instagram</span>
+  </a>
+
+  <script>
+    const slider = document.getElementById("heroSlider");
+    const slides = slider.querySelectorAll(".slide");
+    const dots = slider.querySelectorAll(".dot");
+    const prevBtn = slider.querySelector(".prev");
+    const nextBtn = slider.querySelector(".next");
+
+    let current = 0;
+    let autoPlay;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+        dots[i].classList.toggle("active", i === index);
+      });
+      current = index;
+    }
+
+    function nextSlide() {
+      showSlide((current + 1) % slides.length);
+    }
+
+    function prevSlide() {
+      showSlide((current - 1 + slides.length) % slides.length);
+    }
+
+    function startAutoPlay() {
+      stopAutoPlay();
+      autoPlay = setInterval(nextSlide, 4500);
+    }
+
+    function stopAutoPlay() {
+      if (autoPlay) clearInterval(autoPlay);
+    }
+
+    nextBtn.addEventListener("click", () => {
+      nextSlide();
+      startAutoPlay();
+    });
+
+    prevBtn.addEventListener("click", () => {
+      prevSlide();
+      startAutoPlay();
+    });
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => {
+        showSlide(index);
+        startAutoPlay();
+      });
+    });
+
+    slider.addEventListener("mouseenter", stopAutoPlay);
+    slider.addEventListener("mouseleave", startAutoPlay);
+    slider.addEventListener("focusin", stopAutoPlay);
+    slider.addEventListener("focusout", startAutoPlay);
+
+    showSlide(0);
+    startAutoPlay();
+  </script>
 
 </body>
 </html>

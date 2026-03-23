@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Refined Harmony | Yi-Yun Wang</title>
+  <meta
+    name="description"
+    content="Refined Harmony — a residential interior project by Yi-Yun Wang, pairing oat-toned softness with a subtle European influence."
+  />
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Noto Sans TC", sans-serif;
+      background: linear-gradient(180deg, #f7f3ec 0%, #f4efe7 100%);
+      color: #1f1f1b;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(100% - 40px, 1180px);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.42);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+      backdrop-filter: blur(16px) saturate(140%);
+      -webkit-backdrop-filter: blur(16px) saturate(140%);
+      box-shadow: 0 8px 30px rgba(31, 31, 27, 0.04);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 16px 0;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .logo img {
+      height: 52px;
+      width: auto;
+      border-radius: 12px;
+    }
+
+    nav {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: #6d685f;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #1f1f1b;
+    }
+
+    .hero {
+      padding: 34px 0 18px;
+    }
+
+    .hero-image {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: 30px;
+      overflow: hidden;
+      background: #ddd4c8;
+      box-shadow: 0 16px 48px rgba(31, 31, 27, 0.08);
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .project-head {
+      padding: 40px 0 10px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 42px;
+      align-items: start;
+    }
+
+    .tag {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8a8377;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: clamp(34px, 4.4vw, 58px);
+      line-height: 1.04;
+      margin: 0 0 16px;
+      letter-spacing: -0.03em;
+      max-width: 760px;
+    }
+
+    h2 {
+      font-size: clamp(22px, 2.8vw, 30px);
+      line-height: 1.12;
+      margin: 0 0 10px;
+      letter-spacing: -0.02em;
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: #5f5a52;
+      font-size: 14px;
+    }
+
+    .lead-en {
+      max-width: 760px;
+      font-size: 18px;
+      line-height: 1.65;
+      color: #4e4a43;
+      margin-bottom: 14px;
+    }
+
+    .lead-zh {
+      max-width: 760px;
+      font-size: 16px;
+      line-height: 1.9;
+      color: #5a554d;
+      margin-bottom: 18px;
+    }
+
+    .project-copy {
+      max-width: 760px;
+    }
+
+    .project-meta {
+      background: rgba(255,255,255,0.58);
+      border: 1px solid #d8d0c5;
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .meta-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd4c8;
+    }
+
+    .meta-item:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .meta-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: #8a8377;
+      margin-bottom: 4px;
+    }
+
+    .meta-value {
+      font-size: 14px;
+      color: #1f1f1b;
+      line-height: 1.7;
+    }
+
+    .meta-value a {
+      color: #1f1f1b;
+      border-bottom: 1px solid rgba(31,31,27,0.18);
+    }
+
+    .story {
+      padding: 34px 0 18px;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 0.88fr 1.12fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .story-note {
+      padding-top: 2px;
+    }
+
+    .story-copy {
+      max-width: 760px;
+    }
+
+    .gallery {
+      padding: 18px 0 84px;
+    }
+
+    .gallery-editorial {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .gallery-editorial-second {
+      grid-template-columns: 0.95fr 1.05fr;
+    }
+
+    .gallery-stack {
+      display: grid;
+      gap: 22px;
+    }
+
+    .gallery-item {
+      border-radius: 26px;
+      overflow: hidden;
+      background: #ddd4c8;
+      box-shadow: 0 14px 34px rgba(31, 31, 27, 0.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .gallery-item.hero-secondary {
+      aspect-ratio: 5 / 4;
+    }
+
+    .gallery-item.tall {
+      aspect-ratio: 4 / 5.1;
+    }
+
+    .gallery-item.wide {
+      aspect-ratio: 16 / 10;
+    }
+
+    .gallery-item.square-soft {
+      aspect-ratio: 1 / 1.08;
+    }
+
+    .related-project {
+      padding: 10px 0 84px;
+    }
+
+    .related-card {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 28px;
+      align-items: center;
+      background: rgba(255,255,255,0.56);
+      border: 1px solid #d8d0c5;
+      border-radius: 28px;
+      padding: 22px;
+      overflow: hidden;
+    }
+
+    .related-media {
+      border-radius: 22px;
+      overflow: hidden;
+      background: #ddd4c8;
+      aspect-ratio: 5 / 4;
+    }
+
+    .related-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .related-copy {
+      max-width: 620px;
+    }
+
+    .related-kicker {
+      margin: 0 0 8px;
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #8a8377;
+    }
+
+    .related-title {
+      margin: 0 0 10px;
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+    }
+
+    .related-copy p {
+      margin-bottom: 12px;
+    }
+
+    .related-link {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid #cfc6b8;
+      background: rgba(255,255,255,0.42);
+      font-size: 13px;
+      color: #1f1f1b;
+    }
+
+    footer {
+      padding: 24px 0 34px;
+    }
+
+    .footer-inner {
+      border-top: 1px solid #d8d0c5;
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      color: #6d685f;
+      font-size: 13px;
+    }
+
+    .floating-ig {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 15px;
+      border-radius: 999px;
+      background: rgba(31,31,27,0.92);
+      color: #ffffff;
+      border: 1px solid rgba(255,255,255,0.14);
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+      transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .floating-ig:hover {
+      transform: translateY(-2px);
+      opacity: 0.96;
+    }
+
+    .floating-ig-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .floating-ig-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor;
+      display: block;
+    }
+
+    .floating-ig-text {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 1024px) {
+      .container {
+        width: min(100% - 32px, 1180px);
+      }
+
+      .project-grid,
+      .story-grid,
+      .gallery-editorial,
+      .gallery-editorial-second,
+      .related-card {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        align-items: flex-start;
+        gap: 14px;
+        padding: 14px 0;
+      }
+
+      .logo img {
+        height: 44px;
+        border-radius: 10px;
+      }
+
+      nav {
+        width: 100%;
+        gap: 12px 16px;
+        font-size: 13px;
+        line-height: 1.4;
+      }
+
+      .hero {
+        padding: 22px 0 12px;
+      }
+
+      .hero-image {
+        border-radius: 22px;
+        aspect-ratio: 4 / 5;
+      }
+
+      h1 {
+        font-size: clamp(28px, 8vw, 42px);
+      }
+
+      .lead-en {
+        font-size: 16px;
+      }
+
+      .lead-zh {
+        font-size: 15px;
+      }
+
+      .project-head,
+      .story,
+      .gallery {
+        padding-bottom: 24px;
+      }
+
+      .gallery-item {
+        border-radius: 20px;
+      }
+
+      .gallery-item.hero-secondary,
+      .gallery-item.tall,
+      .gallery-item.wide,
+      .gallery-item.square-soft {
+        aspect-ratio: 4 / 5;
+      }
+
+      .related-project {
+        padding-bottom: 60px;
+      }
+
+      .related-card {
+        padding: 18px;
+        border-radius: 22px;
+      }
+
+      .related-media {
+        border-radius: 18px;
+        aspect-ratio: 4 / 5;
+      }
+
+      .floating-ig {
+        right: 14px;
+        bottom: 14px;
+        padding: 10px 13px;
+      }
+
+      .floating-ig-text {
+        font-size: 12px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        width: min(100% - 24px, 1180px);
+      }
+
+      .logo img {
+        height: 40px;
+        border-radius: 9px;
+      }
+
+      nav {
+        gap: 10px 14px;
+        font-size: 12px;
+      }
+
+      p,
+      .meta-value {
+        font-size: 13.5px;
+      }
+
+      .lead-en,
+      .lead-zh {
+        font-size: 14.5px;
+      }
+
+      .project-meta {
+        padding: 18px;
+        border-radius: 20px;
+      }
+
+      .floating-ig {
+        right: 12px;
+        bottom: 12px;
+      }
+
+      .floating-ig-icon svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      .floating-ig-text {
+        font-size: 11.5px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="index.html#home" class="logo">
+        <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/main/b%20logo-02.jpg" alt="Yi-Yun Wang logo">
+      </a>
+      <nav>
+        <a href="index.html#about">About Me</a>
+        <a href="index.html#interior">Interior Project</a>
+        <a href="index.html#recraft">Re:Craft</a>
+        <a href="index.html#contact">Form</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-image">
+          <img
+            src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/bd233c2013b904b67ef95aafbe123f25f63b4e7b/Refined%20Harmony%2002.JPG"
+            alt="Refined Harmony hero image"
+          >
+        </div>
+      </div>
+    </section>
+
+    <section class="project-head">
+      <div class="container project-grid">
+        <div class="project-copy">
+          <div class="tag">Interior Project</div>
+          <h1>Refined Harmony</h1>
+
+          <p class="lead-en">A harmonious dialogue between cultures. This project pairs a soft, oat-toned aesthetic with a touch of European influence, shaping a calm interior language that feels both refined and deeply livable.</p>
+
+          <p class="lead-zh">一場跨文化的和諧對話。此案以柔和的燕麥色調為基底，融入淡淡的歐式語彙，形塑出安靜、細緻且能被日常長時間感受的居住氛圍。</p>
+
+          <p>The textures of dark brown and the organic veining of the green marble TV wall work together to mirror the landscape beyond the windows, blurring the line between indoors and out.</p>
+
+          <p>Rather than relying on strong decorative gestures, the space is composed through tonal balance, material transitions, and measured proportions. Light, stone, wood, and shadow are arranged to create a setting that feels gentle, grounded, and quietly cohesive.</p>
+
+          <p>深棕色材質的厚度與綠色大理石電視牆自然的紋理彼此呼應，像是將窗外景色的層次帶入室內，使空間與外部風景之間的界線變得柔和。</p>
+
+          <p>整體設計並不依賴強烈裝飾，而是透過色調平衡、材質轉換與比例控制來建立空間節奏。光線、石材、木質與陰影被細緻安排，讓居住場景保有溫潤、沉穩且連續的感受。</p>
+        </div>
+
+        <aside class="project-meta">
+          <div class="meta-item">
+            <div class="meta-label">Dimensions</div>
+            <div class="meta-value">133 sqm</div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Photo credit</div>
+            <div class="meta-value">
+              <a href="https://www.instagram.com/wgh_photo/" target="_blank" rel="noopener noreferrer">@wgh_photo</a>
+            </div>
+          </div>
+          <div class="meta-item">
+            <div class="meta-label">Collaboration</div>
+            <div class="meta-value">
+              <a href="https://www.instagram.com/shanshanchuan.design/" target="_blank" rel="noopener noreferrer">@shanshanchuan.design</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="story">
+      <div class="container story-grid">
+        <div class="story-note">
+          <div class="tag">Spatial Narrative</div>
+          <h2>Material, view, and atmosphere</h2>
+        </div>
+
+        <div class="story-copy">
+          <p>At the core of the project is the relationship between material softness and visual depth. Oat-toned finishes establish a calm base, while darker accents and stone surfaces introduce contrast without breaking the quiet overall mood.</p>
+
+          <p>空間的核心在於柔和材質與視覺深度之間的關係。燕麥色系建立溫和底層，較深的色彩與石材表面則補足層次，使整體氛圍安靜卻不單薄。</p>
+
+          <p>By framing views, preserving openness, and allowing textures to speak with restraint, the project seeks a balance between elegance and comfort — an interior that feels composed, but never distant.</p>
+
+          <p>透過視線安排、開放感保留與克制的材料表現，這個空間希望在優雅與舒適之間取得平衡，讓居住感受保持細膩，同時不失親近性。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="container">
+        <div class="gallery-editorial">
+          <div class="gallery-stack">
+            <figure class="gallery-item hero-secondary">
+              <img
+                src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/bd233c2013b904b67ef95aafbe123f25f63b4e7b/Refined%20Harmony%2001.JPG"
+                alt="Refined Harmony interior view 01"
+              >
+            </figure>
+
+            <figure class="gallery-item wide">
+              <img
+                src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/e07e47a53c334979f5bd0ac9d36cccf6f0beb8a5/Refined%20Harmony%2005.JPG"
+                alt="Refined Harmony interior view 05"
+              >
+            </figure>
+          </div>
+
+          <div class="gallery-stack">
+            <figure class="gallery-item tall">
+              <img
+                src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/e07e47a53c334979f5bd0ac9d36cccf6f0beb8a5/Refined%20Harmony%2003.JPG"
+                alt="Refined Harmony interior view 03"
+              >
+            </figure>
+
+            <figure class="gallery-item square-soft">
+              <img
+                src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/4e7cd6c525eb51f52257fb20d57ce99a6c719855/Refined%20Harmony%2004.JPG"
+                alt="Refined Harmony interior view 04"
+              >
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story">
+      <div class="container story-grid">
+        <div class="story-note">
+          <div class="tag">Photo Sequence</div>
+          <h2>Everyday calm in detail</h2>
+        </div>
+
+        <div class="story-copy">
+          <p>Beyond the overall composition, the project is experienced through a sequence of quieter moments — the way light lands on surfaces, the transition between material textures, and the measured framing of furniture and circulation.</p>
+
+          <p>除了整體構圖之外，這個空間真正的魅力也來自一連串較安靜的片刻：光線落在材質上的方式、不同表面之間的轉換，以及家具與動線被細緻安排後所形成的節奏。</p>
+
+          <p>These views reveal how the project balances softness and structure. Rather than emphasizing singular focal points, the interior unfolds through layered details that support daily use while maintaining a refined visual atmosphere.</p>
+
+          <p>這些畫面呈現了空間如何在柔和與秩序之間取得平衡。它並不依賴單一視覺焦點，而是透過層層細節累積出可被日常使用、也能被慢慢感受的生活場景。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="gallery">
+      <div class="container">
+        <div class="gallery-editorial gallery-editorial-second">
+          <div class="gallery-stack">
+            <figure class="gallery-item wide">
+              <img
+                src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/48273da7394484484098c8fec6e329eed973ca81/Refined%20Harmony%2006.JPG"
+                alt="Refined Harmony interior view 06"
+              >
+            </figure>
+
+            <figure class="gallery-item square-soft">
+              <img
+                src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/5e2055e0bbbc4ebfa51876f81bba7f47ac4c62dd/Refined%20Harmony%2008.JPG"
+                alt="Refined Harmony interior view 08"
+              >
+            </figure>
+          </div>
+
+          <div class="gallery-stack">
+            <figure class="gallery-item tall">
+              <img
+                src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/766c88458f69d00d3afbabcff053403718bba797/Refined%20Harmony%2007.JPG"
+                alt="Refined Harmony interior view 07"
+              >
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="related-project">
+      <div class="container">
+        <div class="related-card">
+          <a href="project-green-top-side-table.html" class="related-media">
+            <img
+              src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/bd233c2013b904b67ef95aafbe123f25f63b4e7b/Green%20top%20Side%20table%2001.jpg"
+              alt="Green Top Side Table"
+            >
+          </a>
+
+          <div class="related-copy">
+            <p class="related-kicker">Related Object / Re:Craft</p>
+            <h2 class="related-title">Green Top Side Table</h2>
+
+            <p>The green tile surface of this object originates from the leftover Osaka tiles used on the TV wall in Refined Harmony, extending the material story of the interior into a smaller everyday piece.</p>
+
+            <p>這件家具的綠色桌面，正是來自 Refined Harmony 電視牆鋪貼大阪磁磚後留下的剩餘材料，讓室內空間中的材質語言延伸成日常使用的物件。</p>
+
+            <p>Rather than treating the remaining tiles as waste, the project repositions them as the starting point of a new object — one that carries the memory of the interior while entering a different scale of use.</p>
+
+            <p>它並不是單純將剩料再次利用，而是把原本屬於空間表面的材料重新轉化，讓其在不同尺度中延續價值，也保留這個住宅案的材質記憶。</p>
+
+            <a href="project-green-top-side-table.html" class="related-link">View Green Top Side Table</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Yi-Yun Wang</div>
+      <div>Refined Harmony</div>
+    </div>
+  </footer>
+
+  <a
+    href="https://www.instagram.com/dorawang.ds/"
+    class="floating-ig"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Open Instagram"
+  >
+    <span class="floating-ig-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"/>
+      </svg>
+    </span>
+    <span class="floating-ig-text">Instagram</span>
+  </a>
+
+</body>
+</html>

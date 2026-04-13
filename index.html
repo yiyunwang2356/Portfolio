@@ -6,7 +6,7 @@
   <title>Yi-Yun Wang | Interior & Furniture Design</title>
   <meta
     name="description"
-    content="Yi-Yun Wang portfolio — interior design, furniture design, website design, and material-driven spatial storytelling."
+    content="Yi-Yun Wang portfolio — interior design, selected digital work, and material-driven spatial storytelling."
   />
   <style>
     * { box-sizing: border-box; }
@@ -439,6 +439,23 @@
       margin: 0 auto;
     }
 
+    .contact-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .contact-info {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid #ddd4c8;
+    }
+
+    .contact-info p {
+      margin-bottom: 8px;
+    }
+
     footer {
       padding: 24px 0 34px;
     }
@@ -667,7 +684,8 @@
         font-size: 13.5px;
       }
 
-      .buttons {
+      .buttons,
+      .contact-actions {
         flex-direction: column;
         align-items: stretch;
       }
@@ -722,11 +740,9 @@
         <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/main/b%20logo-02.jpg" alt="Yi-Yun Wang logo">
       </a>
       <nav>
-        <a href="#about">About Me</a>
-        <a href="#interior">Interior Project</a>
-        <a href="#recraft">Re:Craft</a>
-        <a href="#web-design">Website</a>
-        <a href="#contact">Form</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
@@ -734,12 +750,12 @@
   <section class="hero" id="home">
     <div class="container hero-grid">
       <div class="hero-text">
-        <div class="tag">Interior Design / Furniture Design / Website Design</div>
-        <h1>Designing spaces, objects, and digital experiences through material, atmosphere, and everyday use.</h1>
-        <span class="en-sub">A portfolio focused on spatial narrative, material sensibility, and the relationship between objects, websites, and everyday living.</span>
-        <span class="zh-sub">我專注於室內設計、家具設計與網站設計，透過空間、物件與數位體驗回應使用者的日常經驗，讓設計在尺度、質地、資訊與氛圍之間建立更細緻的關係。</span>
+        <div class="tag">Interior Design / Selected Digital Work</div>
+        <h1>Designing spaces and digital experiences through material, atmosphere, and everyday use.</h1>
+        <span class="en-sub">A portfolio focused on spatial narrative, material sensibility, and the relationship between interiors, digital structure, and everyday living.</span>
+        <span class="zh-sub">我專注於室內設計與精選數位作品，透過空間、材質與使用經驗回應日常生活，讓設計在尺度、質地、資訊與氛圍之間建立更清楚而細緻的關係。</span>
         <div class="buttons">
-          <a href="#interior" class="btn btn-dark">View Projects</a>
+          <a href="#projects" class="btn btn-dark">View Projects</a>
           <a href="https://forms.gle/Gvcu7QXtL9oEdANt6" target="_blank" rel="noopener noreferrer" class="btn btn-light">Project Inquiry</a>
         </div>
       </div>
@@ -777,10 +793,10 @@
   <section id="about">
     <div class="container about-grid">
       <div class="about-copy">
-        <div class="tag">About Me</div>
-        <h2>Creating spaces, objects, and digital experiences through material, use, and atmosphere.</h2>
-        <span class="en-sub">I am an interior, furniture, and website designer interested in how materials, behaviors, spatial experience, and digital interaction shape everyday life.</span>
-        <span class="zh-sub">我是 Yi-Yun Wang，專注於室內設計、家具設計與網站設計。我的設計實踐關注材料本身的質感、使用者行為，以及空間與數位介面如何在日常中被感受與記憶。</span>
+        <div class="tag">About</div>
+        <h2>Creating spaces and digital experiences through material, use, and atmosphere.</h2>
+        <span class="en-sub">I am an interior and selected digital designer interested in how materials, behaviors, spatial experience, and digital interaction shape everyday life.</span>
+        <span class="zh-sub">我是 Yi-Yun Wang，專注於室內設計與精選數位設計。我的設計實踐關注材料本身的質感、使用者行為，以及空間與數位介面如何在日常中被感受與記憶。</span>
         <span class="zh-sub">在不同尺度之間，我希望讓設計不只停留在形式，而是真正回到人的生活節奏，回應居住、停留、交流、使用與瀏覽的細節。</span>
       </div>
 
@@ -790,22 +806,23 @@
         <span class="en-sub">Selected areas of practice and creative direction.</span>
         <ul>
           <li>Interior Design</li>
-          <li>Furniture / Object Design</li>
+          <li>Spatial Narrative</li>
+          <li>Material Continuity</li>
           <li>Website Design</li>
-          <li>Material Narrative</li>
           <li>Creative Direction</li>
         </ul>
       </div>
     </div>
   </section>
 
-  <section class="alt" id="interior">
+  <section class="alt" id="projects">
     <div class="container">
       <div class="section-head">
         <div class="section-title-wrap">
-          <div class="tag">Interior Project</div>
-          <h2>Selected interior works</h2>
-          <span class="en-sub">A curated selection of spaces shaped through atmosphere, material sensibility, and everyday spatial rhythm.</span>
+          <div class="tag">Projects</div>
+          <h2>Selected works</h2>
+          <span class="en-sub">A curated selection of interior and digital projects shaped through atmosphere, material sensibility, and everyday rhythm.</span>
+          <span class="zh-sub">精選室內與數位作品，聚焦於空間氛圍、材質語言與日常使用之間的關係。</span>
         </div>
       </div>
 
@@ -873,59 +890,14 @@
     </div>
   </section>
 
-  <section id="recraft">
-    <div class="container">
-      <div class="section-head">
-        <div class="section-title-wrap">
-          <div class="tag">Re:Craft Furniture</div>
-          <h2>Furniture from interior leftovers</h2>
-          <span class="en-sub">Re:Craft transforms high-quality leftover materials from interior renovation into furniture pieces, extending the life of finishes through everyday use.</span>
-          <span class="zh-sub">Re:Craft 以室內裝修中品質良好的剩餘材料為起點，透過家具設計重新轉化與再利用，讓材料在日常使用中延續價值。</span>
-        </div>
-      </div>
-
-      <div class="editorial-list">
-        <article class="editorial-item">
-          <div class="editorial-text">
-            <p class="editorial-kicker">Re:Craft / Side Table</p>
-            <h3 class="editorial-title">Green Top Side Table</h3>
-            <p class="editorial-en">A side table made with leftover Osaka tiles from a TV wall finish, turning interior surface material into a new everyday object.</p>
-            <p class="editorial-zh">以電視牆鋪貼大阪磁磚後留下的材料作為桌板，將原本屬於室內表面的剩料轉化為可持續使用的家具。</p>
-            <a href="project-green-top-side-table.html" class="editorial-link">View Case</a>
-          </div>
-          <div class="editorial-media">
-            <a href="project-green-top-side-table.html" class="editorial-image">
-              <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/bd233c2013b904b67ef95aafbe123f25f63b4e7b/Green%20top%20Side%20table%2001.jpg" alt="Green Top Side Table">
-            </a>
-          </div>
-        </article>
-
-        <article class="editorial-item reverse">
-          <div class="editorial-text">
-            <p class="editorial-kicker">Re:Craft / Tea Table</p>
-            <h3 class="editorial-title">Wooden Night Stand</h3>
-            <p class="editorial-en">Built from the remaining solid wood left after producing a dining tabletop, this piece reuses the offcut through a solid wood joinery approach.</p>
-            <p class="editorial-zh">以製作餐桌桌板後剩下的實木材料重新製作，並透過實木榫接方式形成一件延續木質價值的茶几作品。</p>
-            <a href="project-wooden-night-stand.html" class="editorial-link">View Case</a>
-          </div>
-          <div class="editorial-media">
-            <a href="project-wooden-night-stand.html" class="editorial-image">
-              <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/bd233c2013b904b67ef95aafbe123f25f63b4e7b/Wooden%20Night%20stand%2001.jpg" alt="Wooden Night Stand">
-            </a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
   <section class="alt" id="web-design">
     <div class="container">
       <div class="section-head">
         <div class="section-title-wrap">
-          <div class="tag">Website Design</div>
-          <h2>Selected website works</h2>
+          <div class="tag">Selected Digital</div>
+          <h2>Website works</h2>
           <span class="en-sub">Brand-led websites designed through structure, atmosphere, and user flow.</span>
-          <span class="zh-sub">除了空間與家具設計，我也參與品牌網站的規劃與設計，整理內容架構、視覺節奏與使用流程，讓數位體驗延續品牌氣質。</span>
+          <span class="zh-sub">除了空間設計，我也參與精選品牌網站的規劃與設計，整理內容架構、視覺節奏與使用流程，讓數位體驗延續品牌氣質。</span>
         </div>
       </div>
 
@@ -966,12 +938,16 @@
   <section id="contact">
     <div class="container">
       <div class="contact-box">
-        <div class="tag">Form</div>
+        <div class="tag">Contact</div>
         <h2>Project inquiry and collaboration</h2>
-        <span class="en-sub">For commissions, collaborations, interior projects, furniture inquiries, or website design requests, please fill out the form.</span>
-        <span class="zh-sub">有合作、委託、空間設計、家具設計或網站設計需求，歡迎填寫表單。你可以透過表單提供專案類型、預計時程、空間規模、網站需求或合作方向，我會再依內容與你聯繫。</span>
-        <div class="buttons">
+        <span class="en-sub">For commissions, collaborations, interior projects, or selected website design requests, please fill out the form or contact me directly.</span>
+        <span class="zh-sub">有合作、委託、空間設計或精選網站設計需求，歡迎填寫表單或直接來信聯絡。你可以透過表單提供專案類型、預計時程、空間規模、網站需求或合作方向，我會再依內容與你聯繫。</span>
+        <div class="contact-actions">
           <a href="https://forms.gle/Gvcu7QXtL9oEdANt6" target="_blank" rel="noopener noreferrer" class="btn btn-dark">Fill Out the Form</a>
+          <a href="mailto:dorawang2356@gmail.com" class="btn btn-light">Email Me</a>
+        </div>
+        <div class="contact-info">
+          <p>Email: <a href="mailto:dorawang2356@gmail.com">dorawang2356@gmail.com</a></p>
         </div>
       </div>
     </div>
@@ -980,7 +956,7 @@
   <footer>
     <div class="container footer-inner">
       <div>© 2026 Yi-Yun Wang</div>
-      <div>Interior Design / Furniture Design / Website Design</div>
+      <div>Interior Design / Selected Digital Work</div>
     </div>
   </footer>
 

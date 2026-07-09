@@ -363,8 +363,23 @@
       background: rgba(255,255,255,0.42);
     }
 
-    .editorial-item.text-only .editorial-text {
+    .editorial-item.text-only .editorial-text,
+    .playground-item .editorial-text {
       max-width: 720px;
+    }
+
+    .playground-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .playground-item {
+      padding: 24px;
+      border: 1px solid #d8d0c5;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.42);
     }
 
     .editorial-item.reverse .editorial-text {
@@ -554,7 +569,8 @@
       .hero-grid,
       .about-grid,
       .editorial-feature,
-      .editorial-item {
+      .editorial-item,
+      .playground-grid {
         grid-template-columns: 1fr;
       }
 
@@ -773,7 +789,8 @@
       <nav>
         <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#selected-works">Selected Works</a>
+        <a href="#selected-work">Selected Work</a>
+        <a href="#playground">Playground</a>
         <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -788,23 +805,20 @@
         <span class="en-sub">A portfolio focused on spatial narrative, material sensibility, and the relationship between interiors, digital structure, and everyday living.</span>
         <span class="zh-sub">我專注於室內設計與精選數位作品，透過空間、材質與使用經驗回應日常生活，讓設計在尺度、質地、資訊與氛圍之間建立更清楚而細緻的關係。</span>
         <div class="buttons">
-          <a href="#selected-works" class="btn btn-dark">View Work</a>
+          <a href="#selected-work" class="btn btn-dark">View Work</a>
           <a href="https://forms.gle/Gvcu7QXtL9oEdANt6" target="_blank" rel="noopener noreferrer" class="btn btn-light">Project Inquiry</a>
         </div>
       </div>
 
       <div class="hero-slider" id="heroSlider" aria-label="Featured works slider">
         <div class="slide active">
-          <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/c2177d3daae8319540413312f15d5a5440f4c5c9/Refined%20Harmony%2001.JPG" alt="Refined Harmony project">
+          <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/6a8772ad8baa9bff59c59a40c535bf62b84e53d9/BookingPie-line%20banner-cover.jpg" alt="BookingPie case study">
         </div>
         <div class="slide">
-          <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/8b74421c75ce6cf6fafa893757e4b28dbca20fcf/Nomadd%20haus%2001.jpg" alt="Nomadd Haus project">
+          <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/37cf6f96e0d5111be85553a004c0dc64515531de/nomaddhaus-website-cover.png" alt="Nomadd Haus website">
         </div>
         <div class="slide">
           <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/8b74421c75ce6cf6fafa893757e4b28dbca20fcf/Cloister%20Studio%2001.jpg" alt="Cloister Studio project">
-        </div>
-        <div class="slide">
-          <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/d35ebaafe295eb77233ded45de73a03406fb8468/Green%20Hygge%2001.jpg" alt="Green Hygge project">
         </div>
 
         <div class="slider-overlay"></div>
@@ -816,7 +830,6 @@
             <button class="dot active" aria-label="Go to slide 1"></button>
             <button class="dot" aria-label="Go to slide 2"></button>
             <button class="dot" aria-label="Go to slide 3"></button>
-            <button class="dot" aria-label="Go to slide 4"></button>
           </div>
         </div>
       </div>
@@ -848,151 +861,113 @@
     </div>
   </section>
 
-  <section class="alt" id="selected-works">
+  <section class="alt" id="selected-work">
     <div class="container">
       <div class="section-head">
         <div class="section-title-wrap">
-          <div class="tag">Selected Works</div>
-          <h2>Selected Works</h2>
-          <span class="en-sub">A curated selection of digital systems and spatial design projects shaped through structure, atmosphere, and everyday use.</span>
-          <span class="zh-sub">精選數位系統與空間設計作品，聚焦資訊架構、空間氛圍與日常使用經驗之間的關係。</span>
+          <div class="tag">Selected Work</div>
+          <h2>Selected Work</h2>
+          <span class="en-sub">A focused selection of digital systems and one spatial design case shaped through structure, atmosphere, and everyday use.</span>
+          <span class="zh-sub">精選數位系統與一個空間設計案例，聚焦資訊架構、空間氛圍與日常使用經驗之間的關係。</span>
         </div>
       </div>
 
-      <div class="work-category" id="digital-systems">
-        <div class="work-category-head">
-          <div class="tag">Digital Systems</div>
-          <h3>Digital Systems</h3>
-          <span class="en-sub">Selected digital systems shaped through information structure, user flow, brand experience, and everyday operation.</span>
-          <span class="zh-sub">精選數位系統作品，聚焦資訊架構、使用流程、品牌體驗與日常營運需求之間的連結。</span>
-        </div>
+      <div class="editorial-list">
+        <article class="editorial-item">
+          <div class="editorial-text">
+            <p class="editorial-kicker">Featured Digital System</p>
+            <h3 class="editorial-title">BookingPie</h3>
+            <p class="editorial-en">A booking experience case study focused on information structure, flow clarity, and the path from discovery to reservation.</p>
+            <p class="editorial-zh">以預約流程為核心的 UIUX 案例，聚焦資訊架構、流程清晰度，以及從探索到預約的使用者路徑。</p>
+            <a href="https://landing.bookingpie.app/index.html" target="_blank" rel="noopener noreferrer" class="editorial-link">Visit Website</a>
+          </div>
+          <div class="editorial-media">
+            <a href="https://landing.bookingpie.app/index.html" target="_blank" rel="noopener noreferrer" class="editorial-image">
+              <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/6a8772ad8baa9bff59c59a40c535bf62b84e53d9/BookingPie-line%20banner-cover.jpg" alt="BookingPie case study cover">
+            </a>
+          </div>
+        </article>
 
-        <div class="editorial-list">
-          <article class="editorial-item">
-            <div class="editorial-text">
-              <p class="editorial-kicker">UIUX Case Study</p>
-              <h3 class="editorial-title">BookingPie</h3>
-              <p class="editorial-en">A booking experience case study focused on information structure, flow clarity, and the path from discovery to reservation.</p>
-              <p class="editorial-zh">以預約流程為核心的 UIUX 案例，聚焦資訊架構、流程清晰度，以及從探索到預約的使用者路徑。</p>
-              <a href="https://landing.bookingpie.app/index.html" target="_blank" rel="noopener noreferrer" class="editorial-link">Visit Website</a>
-            </div>
-            <div class="editorial-media">
-              <a href="https://landing.bookingpie.app/index.html" target="_blank" rel="noopener noreferrer" class="editorial-image">
-                <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/6a8772ad8baa9bff59c59a40c535bf62b84e53d9/BookingPie-line%20banner-cover.jpg" alt="BookingPie case study cover">
-              </a>
-            </div>
-          </article>
+        <article class="editorial-item reverse">
+          <div class="editorial-text">
+            <p class="editorial-kicker">Featured Digital System</p>
+            <h3 class="editorial-title">Nomadd Haus</h3>
+            <p class="editorial-en">A brand and space website for a shared creative environment, connecting atmosphere, room discovery, events, and reservation flow.</p>
+            <p class="editorial-zh">以共享創意空間為核心的品牌網站，整合場域敘事、空間探索、活動資訊與預約導向內容。</p>
+            <a href="https://nomaddhaus.com" target="_blank" rel="noopener noreferrer" class="editorial-link">Visit Website</a>
+          </div>
+          <div class="editorial-media">
+            <a href="https://nomaddhaus.com" target="_blank" rel="noopener noreferrer" class="editorial-image">
+              <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/37cf6f96e0d5111be85553a004c0dc64515531de/nomaddhaus-website-cover.png" alt="Nomadd Haus website cover">
+            </a>
+          </div>
+        </article>
 
-          <article class="editorial-item reverse">
-            <div class="editorial-text">
-              <p class="editorial-kicker">Website Design / UIUX</p>
-              <h3 class="editorial-title">Nomadd Haus</h3>
-              <p class="editorial-en">A brand and space website for a shared creative environment, connecting atmosphere, room discovery, events, and reservation flow.</p>
-              <p class="editorial-zh">以共享創意空間為核心的品牌網站，整合場域敘事、空間探索、活動資訊與預約導向內容。</p>
-              <a href="https://nomaddhaus.com" target="_blank" rel="noopener noreferrer" class="editorial-link">Visit Website</a>
-            </div>
-            <div class="editorial-media">
-              <a href="https://nomaddhaus.com" target="_blank" rel="noopener noreferrer" class="editorial-image">
-                <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/37cf6f96e0d5111be85553a004c0dc64515531de/nomaddhaus-website-cover.png" alt="Nomadd Haus website cover">
-              </a>
-            </div>
-          </article>
+        <article class="editorial-item text-only">
+          <div class="editorial-text">
+            <p class="editorial-kicker">Featured Digital System</p>
+            <h3 class="editorial-title">Construction Inspection</h3>
+            <p class="editorial-en">A construction inspection workflow organized around site progress, review clarity, and operational visibility.</p>
+            <p class="editorial-zh">以工地檢查、進度追蹤與營運可視化為核心的 inspection 系統。</p>
+          </div>
+        </article>
 
-          <article class="editorial-item text-only">
-            <div class="editorial-text">
-              <p class="editorial-kicker">Dashboard System</p>
-              <h3 class="editorial-title">Construction Dashboard</h3>
-              <p class="editorial-en">A construction workflow dashboard organized around project tracking, operational visibility, and decision support.</p>
-              <p class="editorial-zh">以工程進度、營運可視化與決策支援為核心的 dashboard 系統。</p>
-            </div>
-          </article>
+        <article class="editorial-item reverse">
+          <div class="editorial-text">
+            <p class="editorial-kicker">Selected Spatial Design</p>
+            <h3 class="editorial-title">Cloister Studio</h3>
+            <p class="editorial-en">A focused studio space articulated through quiet detail, concentration, and visual identity.</p>
+            <p class="editorial-zh">在空間節奏與材質細節之間，形塑更專注且具有識別性的工作場域。</p>
+            <a href="projects/project-cloister-studio.html" class="editorial-link">View Case</a>
+          </div>
+          <div class="editorial-media">
+            <a href="projects/project-cloister-studio.html" class="editorial-image">
+              <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/8b74421c75ce6cf6fafa893757e4b28dbca20fcf/Cloister%20Studio%2001.jpg" alt="Cloister Studio">
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="playground">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title-wrap">
+          <div class="tag">Playground</div>
+          <h2>Playground</h2>
+          <span class="en-sub">A space for coding studies, interface experiments, and small GitHub-based explorations.</span>
+          <span class="zh-sub">放置 vibe coding、實驗性介面與 GitHub 小型專案的練習場域。</span>
         </div>
       </div>
 
-      <div class="work-category" id="spatial-design">
-        <div class="work-category-head">
-          <div class="tag">Spatial Design</div>
-          <h3>Spatial Design</h3>
-          <span class="en-sub">Interior work shaped through atmosphere, material rhythm, and the details of everyday living.</span>
-          <span class="zh-sub">空間設計作品，聚焦氛圍、材質節奏與日常居住細節之間的關係。</span>
-        </div>
+      <div class="playground-grid">
+        <article class="playground-item">
+          <div class="editorial-text">
+            <p class="editorial-kicker">Playground</p>
+            <h3 class="editorial-title">Vibe Coding</h3>
+            <p class="editorial-en">Small coding studies that explore fast prototyping, interface rhythm, and AI-assisted making.</p>
+            <p class="editorial-zh">以快速原型、介面節奏與 AI 輔助製作為核心的小型 coding 練習。</p>
+          </div>
+        </article>
 
-        <div class="editorial-list">
-          <article class="editorial-feature">
-            <div class="editorial-media">
-              <a href="projects/project-cloister-studio.html" class="editorial-image">
-                <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/8b74421c75ce6cf6fafa893757e4b28dbca20fcf/Cloister%20Studio%2001.jpg" alt="Cloister Studio">
-              </a>
-            </div>
-            <div class="editorial-text">
-              <p class="editorial-kicker">Featured Spatial Design</p>
-              <h3 class="editorial-title">Cloister Studio</h3>
-              <p class="editorial-en">A focused studio space articulated through quiet detail, concentration, and visual identity.</p>
-              <p class="editorial-zh">在空間節奏與材質細節之間，形塑更專注且具有識別性的工作場域。</p>
-              <a href="projects/project-cloister-studio.html" class="editorial-link">View Case</a>
-            </div>
-          </article>
+        <article class="playground-item">
+          <div class="editorial-text">
+            <p class="editorial-kicker">Playground</p>
+            <h3 class="editorial-title">Experiments</h3>
+            <p class="editorial-en">Visual and interaction experiments for testing ideas before they become complete projects.</p>
+            <p class="editorial-zh">用來測試視覺、互動與想法雛形的實驗集合。</p>
+          </div>
+        </article>
 
-          <article class="editorial-item">
-            <div class="editorial-text">
-              <p class="editorial-kicker">Residential Interior</p>
-              <h3 class="editorial-title">Refined Harmony</h3>
-              <p class="editorial-en">A harmonious dialogue between cultures, pairing a soft oat-toned aesthetic with a subtle European influence.</p>
-              <p class="editorial-zh">一場跨文化的和諧對話，以柔和燕麥色調結合淡淡的歐式語彙，建立安靜而平衡的空間氛圍。</p>
-              <a href="projects/project-refined-harmony.html" class="editorial-link">View Case</a>
-            </div>
-            <div class="editorial-media">
-              <a href="projects/project-refined-harmony.html" class="editorial-image">
-                <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/c2177d3daae8319540413312f15d5a5440f4c5c9/Refined%20Harmony%2001.JPG" alt="Refined Harmony">
-              </a>
-            </div>
-          </article>
-
-          <article class="editorial-item reverse">
-            <div class="editorial-text">
-              <p class="editorial-kicker">Residential Interior</p>
-              <h3 class="editorial-title">Wooded Gray</h3>
-              <p class="editorial-en">A 47 sqm apartment transformed through furnishing, minimal structural changes, dark wood accents, and a monochromatic gray palette.</p>
-              <p class="editorial-zh">以家具配置與少量結構調整重新轉化 47 平方米公寓，透過深色木質與灰色單色系建立沉著且細緻的空間氛圍。</p>
-              <a href="projects/project-wooded-gray.html" class="editorial-link">View Case</a>
-            </div>
-            <div class="editorial-media">
-              <a href="projects/project-wooded-gray.html" class="editorial-image">
-                <img src="assets/images/Wooded Gray 01.jpg" alt="Wooded Gray">
-              </a>
-            </div>
-          </article>
-
-          <article class="editorial-item">
-            <div class="editorial-text">
-              <p class="editorial-kicker">Spatial Design</p>
-              <h3 class="editorial-title">Nomadd Haus</h3>
-              <p class="editorial-en">A shared environment shaped through atmosphere, gathering, and everyday interaction.</p>
-              <p class="editorial-zh">透過場域氛圍與使用情境整合共享、停留與交流的空間感受。</p>
-              <a href="projects/project-nomadd-haus.html" class="editorial-link">View Case</a>
-            </div>
-            <div class="editorial-media">
-              <a href="projects/project-nomadd-haus.html" class="editorial-image">
-                <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/8b74421c75ce6cf6fafa893757e4b28dbca20fcf/Nomadd%20haus%2001.jpg" alt="Nomadd Haus">
-              </a>
-            </div>
-          </article>
-
-          <article class="editorial-item reverse">
-            <div class="editorial-text">
-              <p class="editorial-kicker">Residential Interior</p>
-              <h3 class="editorial-title">Green Hygge</h3>
-              <p class="editorial-en">A warm residential interior shaped by gentle green tones, natural textures, and a calm everyday atmosphere.</p>
-              <p class="editorial-zh">以柔和綠色調、自然材質與安定日常感所構成的住宅空間，讓居住氛圍在溫潤與放鬆之間取得平衡。</p>
-              <a href="projects/project-green-hygge.html" class="editorial-link">View Case</a>
-            </div>
-            <div class="editorial-media">
-              <a href="projects/project-green-hygge.html" class="editorial-image">
-                <img src="https://raw.githubusercontent.com/yiyunwang2356/Portfolio/d35ebaafe295eb77233ded45de73a03406fb8468/Green%20Hygge%2001.jpg" alt="Green Hygge">
-              </a>
-            </div>
-          </article>
-        </div>
+        <article class="playground-item">
+          <div class="editorial-text">
+            <p class="editorial-kicker">Playground</p>
+            <h3 class="editorial-title">GitHub Projects</h3>
+            <p class="editorial-en">A collection of small builds, notes, and public project explorations hosted through GitHub.</p>
+            <p class="editorial-zh">整理小型建置、筆記與公開 GitHub 專案探索。</p>
+          </div>
+        </article>
       </div>
     </div>
   </section>
